@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character List</title>
+</head>
+<body>
+    <a href="{% url 'create_pathfinder' %}">Create new character</a>
+    <h1>Character List</h1>
+    <ul>
+        {% for character in characters %}
+            <li>{{ character.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

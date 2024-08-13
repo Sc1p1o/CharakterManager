@@ -1,0 +1,56 @@
+/* Definiert die Breite und anzuzeigende Blockeigenschaften für Formularelemente */
+
+html, body {
+    width: 100%;
+    height: 100%;
+    max-width: max-content;
+    margin: auto;
+    text-align: center;
+}
+
+select{
+    width: 95%;
+    background-color: antiquewhite;
+}
+
+input{
+    width: 95%;
+    background-color: antiquewhite;
+}
+
+.general_info {
+    width: 24%;
+    horiz-align: center;
+    text-align: left;
+    display: inline-block;
+}
+
+.attr_skills {
+    width: 49%;
+    horiz-align: center;
+    vertical-align: top;
+    text-align: left;
+    display: inline-block;
+}
+
+.attr_content, .attr_name, .attr_corner, .attr_result{
+    width: 11%;
+    display: inline-block;
+    margin-left: 2em;
+    margin-right: 2em;
+    border: 2px solid black;
+}
+
+label.attr_content, label.attr_name, label.attr_result{
+    text-align: center;
+}
+
+.attr_name {
+    color: white;
+    background-color: black;
+}
+
+input.attr_input, .attr_corner, label.attr_result {
+    border: None;
+}
+

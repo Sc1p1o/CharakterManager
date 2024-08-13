@@ -1,0 +1,241 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Character</title>
+    <link href="{% static 'characters/character_sheet.css' %}" rel="stylesheet">
+
+</head>
+<body>
+
+    <h1>Create new character</h1>
+    <div name="general_information">
+        <div class="general_info">
+            <label for="char_player">Player:</label><br>
+            <input type="text" id="char_player" name="char_player" class="general_input">
+        </div>
+
+        <div class="general_info">
+            <label for="char_name">Name:</label><br>
+            <input type="text" id="char_name" name="char_name" class="general_input">
+        </div>
+        <div class="general_info">
+            <label for="char_align">Alignment:</label><br>
+            <select id="char_align" name="char_align" class="general_input">
+                <option value="lawfull_good">Lawfull Good</option>
+                <option value="neutral_good">Neutral Good</option>
+                <option value="chaotic_good">Chaotic Good</option>
+                <option value="lawfull_neutral">Lawfull Neutral</option>
+                <option value="true_neutral" selected>True Neutral</option>
+                <option value="chaotic_neutral">Chaotic Neutral</option>
+                <option value="lawfull_evil">Lawfull Evil</option>
+                <option value="neutral_evil">Neutral Evil</option>
+                <option value="chaotic_evil">Chaotic Evil</option>
+            </select>
+        </div>
+        <div class="general_info">
+            <label for="char_race">Race:</label><br>
+            <input type="text" id="char_race" name="char_race" class="general_input">
+        </div>
+
+        <div class="general_info">
+            <label for="char_gender">Gender:</label><br>
+            <input type="text" id="char_gender" name="char_gender">
+        </div>
+
+        <div class="general_info">
+            <label for="char_age">Age:</label><br>
+            <input type="number" id="char_age" name="char_age">
+        </div>
+
+        <div class="general_info">
+            <label for="char_deity">Deity:</label><br>
+            <input type="text" id="char_deity" name="char_deity">
+        </div>
+
+        <div class="general_info">
+            <label for="char_home">Homeland:</label><br>
+            <input type="text" id="char_home" name="char_home">
+        </div>
+
+        <div class="general_info">
+            <label for="char_height">Height:</label><br>
+            <input type="number" step="0.01" id="char_height" name="char_height">
+        </div>
+
+        <div class="general_info">
+            <label for="char_weight">Weight:</label><br>
+            <input type="number" step="0.01" id="char_weight" name="char_weight">
+        </div>
+
+        <div class="general_info">
+            <label for="char_eyes">Eyes:</label><br>
+            <input type="text" id="char_eyes" name="char_eyes">
+        </div>
+
+        <div class="general_info">
+
+        </div>
+    </div>
+
+    <br>
+
+    <div class="attr_skills" name="attributes">
+        <div>
+            <label class="attr_corner"> </label>
+            <label class="attr_name">Base</label>
+            <label class="attr_name">Race</label>
+            <label class="attr_name">Misc</label>
+            <label class="attr_name">Mod</label>
+        </div><br>
+        <div>
+            <label class="attr_name">STR</label>
+
+            <label class="attr_content">
+                <input type="number" id="attr_str_base" name="attr_str" oninput="calculateMod('str')"
+                class="attr_input">
+            </label>
+
+            <label class="attr_content">
+                <input type="number" id="attr_str_race" name="attr_str" oninput="calculateMod('str')"
+                class="attr_input">
+            </label>
+
+            <label class="attr_content">
+                <input type="number" id="attr_str_misc" name="attr_str" oninput="calculateMod('str')"
+                class="attr_input">
+            </label>
+            <label class="attr_content">
+                <label class="attr_result" id="result_str"></label>
+            </label>
+        </div><br>
+        <div>
+            <label class="attr_name">DEX</label>
+
+            <label class="attr_content">
+                <input type="number" id="attr_dex_base" name="attr_dex" oninput="calculateMod('dex')"
+                class="attr_input">
+            </label>
+
+            <label class="attr_content">
+                <input type="number" id="attr_dex_race" name="attr_dex" oninput="calculateMod('dex')"
+                class="attr_input">
+            </label>
+
+            <label class="attr_content">
+                <input type="number" id="attr_dex_misc" name="attr_dex" oninput="calculateMod('dex')"
+                class="attr_input">
+            </label>
+            <label class="attr_content">
+                <label class="attr_result" id="result_dex"></label>
+            </label>
+        </div><br>
+
+        <div>
+            <label class="attr_name">CON</label>
+
+            <label class="attr_content">
+                <input type="number" id="attr_con_base" name="attr_con" oninput="calculateMod('con')"
+                class="attr_input">
+            </label>
+
+            <label class="attr_content">
+                <input type="number" id="attr_con_race" name="attr_con" oninput="calculateMod('con')"
+                class="attr_input">
+            </label>
+
+            <label class="attr_content">
+                <input type="number" id="attr_con_misc" name="attr_con" oninput="calculateMod('con')"
+                class="attr_input">
+            </label>
+
+            <label class="attr_content">
+                <label class="attr_result" id="result_con"></label>
+            </label>
+        </div><br>
+
+        <div>
+            <label class="attr_name">INT</label>
+
+            <label class="attr_content">
+                <input type="number" id="attr_int_base" name="attr_int" oninput="calculateMod('int')"
+                class="attr_input">
+            </label>
+
+            <label class="attr_content">
+                <input type="number" id="attr_int_race" name="attr_dex" oninput="calculateMod('int')"
+                class="attr_input">
+            </label>
+
+            <label class="attr_content">
+                <input type="number" id="attr_int_misc" name="attr_int" oninput="calculateMod('int')"
+                class="attr_input">
+            </label>
+
+            <label class="attr_content">
+                <label class="attr_result" id="result_int"></label>
+            </label>
+        </div><br>
+
+        <div>
+            <label class="attr_name">WIS</label>
+
+            <label class="attr_content">
+                <input type="number" id="attr_wis_base" name="attr_wis" oninput="calculateMod('wis')"
+                class="attr_input">
+            </label>
+
+            <label class="attr_content">
+                <input type="number" id="attr_wis_race" name="attr_wis" oninput="calculateMod('wis')"
+                class="attr_input">
+            </label>
+
+            <label class="attr_content">
+                <input type="number" id="attr_wis_misc" name="attr_wis" oninput="calculateMod('wis')"
+                class="attr_input">
+            </label>
+
+            <label class="attr_content">
+                <label class="attr_result" id="result_wis"></label>
+            </label>
+        </div><br>
+
+        <div>
+            <label class="attr_name">CHR</label>
+
+            <label class="attr_content">
+                <input type="number" id="attr_chr_base" name="attr_chr" oninput="calculateMod('chr')"
+                class="attr_input">
+            </label>
+
+            <label class="attr_content">
+                <input type="number" id="attr_chr_race" name="attr_chr" oninput="calculateMod('chr')"
+                class="attr_input">
+            </label>
+
+            <label class="attr_content">
+                <input type="number" id="attr_chr_misc" name="attr_chr" oninput="calculateMod('chr')"
+                class="attr_input">
+            </label>
+
+            <label class="attr_content">
+                <label class="attr_result" id="result_chr"></label>
+            </label>
+        </div><br>
+    </div>
+
+    <div class="attr_skills">
+        test
+    </div>
+
+    <button type="submit">Create</button>
+
+    <a href="{% url 'character_list' %}">Back to character list</a>
+
+    <script src="{% static 'characters/js/character_creator.js' %}" defer> </script>
+</body>
+
+
+</html>
