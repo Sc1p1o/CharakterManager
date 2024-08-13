@@ -4,29 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04b4fb6f-45e4-4606-b127-3ee0cf5d7992" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/CharakterManager.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CharakterManager/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CharakterManager/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CharakterManager/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CharakterManager/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CharakterManager/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/characters/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/characters/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/characters/static/characters/character_sheet.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/characters/static/characters/js/character_creator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/characters/templates/characters/character_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/characters/templates/characters/create_pathfinder.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/characters/templates/characters/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/characters/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-    </list>
+    <list default="true" id="04b4fb6f-45e4-4606-b127-3ee0cf5d7992" name="Changes" comment="initial commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -117,11 +95,24 @@
       <updated>1723324373087</updated>
       <workItem from="1723324374472" duration="14641000" />
       <workItem from="1723400857028" duration="28059000" />
-      <workItem from="1723498800839" duration="20587000" />
+      <workItem from="1723498800839" duration="20917000" />
     </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1723520003151</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1723520003151</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
   </component>
 </project>
