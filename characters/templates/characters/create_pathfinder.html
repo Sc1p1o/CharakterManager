@@ -82,7 +82,7 @@
 
     <br>
 
-    <div class="attr_skills" name="attributes">
+    <div class="triple_element" name="attributes">
         <div>
             <label class="attr_corner"> </label>
             <label class="attr_name">Base</label>
@@ -108,7 +108,7 @@
                 class="attr_input">
             </label>
             <label class="attr_content">
-                <label class="attr_result" id="result_str"></label>
+                <label class="result_attr result_str" id="result_str"></label>
             </label>
         </div><br>
         <div>
@@ -129,7 +129,7 @@
                 class="attr_input">
             </label>
             <label class="attr_content">
-                <label class="attr_result" id="result_dex"></label>
+                <label class="result_attr result_dex" id="result_dex"></label>
             </label>
         </div><br>
 
@@ -152,7 +152,7 @@
             </label>
 
             <label class="attr_content">
-                <label class="attr_result" id="result_con"></label>
+                <label class="result_attr result_con" id="result_con"></label>
             </label>
         </div><br>
 
@@ -175,7 +175,7 @@
             </label>
 
             <label class="attr_content">
-                <label class="attr_result" id="result_int"></label>
+                <label class="result_attr result_int" id="result_int"></label>
             </label>
         </div><br>
 
@@ -198,7 +198,7 @@
             </label>
 
             <label class="attr_content">
-                <label class="attr_result" id="result_wis"></label>
+                <label class="result_attr result_wis" id="result_wis"></label>
             </label>
         </div><br>
 
@@ -221,13 +221,1270 @@
             </label>
 
             <label class="attr_content">
-                <label class="attr_result" id="result_chr"></label>
+                <label class="result_attr result_chr" id="result_chr"></label>
             </label>
         </div><br>
     </div>
 
-    <div class="attr_skills">
+    <div class="triple_element">
         test
+    </div>
+
+    <div class="triple_element" name="skill_table">
+        <div class="skill_line_head">
+            <h2>Skills</h2>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="acrob_check" value="acrob_check" id="skill_acrob_check"
+                       onclick="calculateSkill('acrob')">
+            </label>
+            <label class="skill_name">
+                Acrobatic
+            </label>
+            <label class="skill_content">
+                <label id="skill_acrob_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =DEX
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_dex" id="skill_acrob_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_acrob_ranks" oninput="calculateSkill('acrob')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_acrob_misc" oninput="calculateSkill('acrob')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="aprs_check" value="aprs_check" id="skill_aprs_check"
+                       onclick="calculateSkill('aprs')">
+            </label>
+            <label class="skill_name">
+                Appraise
+            </label>
+            <label class="skill_content">
+                <label id="skill_aprs_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =INT
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_int" id="skill_aprs_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_aprs_ranks" oninput="calculateSkill('aprs')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_aprs_misc" oninput="calculateSkill('aprs')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="blf_check" value="blf_check" id="skill_blf_check"
+                       onclick="calculateSkill('blf')">
+            </label>
+            <label class="skill_name">
+                Bluff
+            </label>
+            <label class="skill_content">
+                <label id="skill_blf_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =CHR
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_chr" id="skill_blf_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_blf_ranks" oninput="calculateSkill('blf')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_blf_misc" oninput="calculateSkill('blf')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="clb_check" value="clb_check" id="skill_clb_check"
+                       onclick="calculateSkill('clb')">
+            </label>
+            <label class="skill_name">
+                Climb
+            </label>
+            <label class="skill_content">
+                <label id="skill_clb_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =STR
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_str" id="skill_clb_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_clb_ranks" oninput="calculateSkill('clb')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_clb_misc" oninput="calculateSkill('clb')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="crft1_check" value="crft1_check" id="skill_crft1_check"
+                       onclick="calculateSkill('crft1')">
+            </label>
+            <label class="skill_name">
+                Craft <input type="text" class="skill_input_alt" name="skill_crft1" id="skill_crft1">
+            </label>
+            <label class="skill_content">
+                <label id="skill_crft1_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =INT
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_int" id="skill_crft1_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_crft1_ranks" oninput="calculateSkill('crft1')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_crft1_misc" oninput="calculateSkill('crft1')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="crft2_check" value="crft2_check" id="skill_crft2_check"
+                       onclick="calculateSkill('crft2')">
+            </label>
+            <label class="skill_name">
+                Craft <input type="text" class="skill_input_alt" name="skill_crft2" id="skill_crft2">
+            </label>
+            <label class="skill_content">
+                <label id="skill_crft2_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =INT
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_int" id="skill_crft2_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_crft2_ranks" oninput="calculateSkill('crft2')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_crft2_misc" oninput="calculateSkill('crft2')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="crft3_check" value="crft3_check" id="skill_crft3_check"
+                       onclick="calculateSkill('crft3')">
+            </label>
+            <label class="skill_name">
+                Craft <input type="text" class="skill_input_alt" name="skill_crft3" id="skill_crft3">
+            </label>
+            <label class="skill_content">
+                <label id="skill_crft3_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =INT
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_int" id="skill_crft3_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_crft3_ranks" oninput="calculateSkill('crft3')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_crft3_misc" oninput="calculateSkill('crft3')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="dpl_check" value="dpl_check" id="skill_dpl_check"
+                       onclick="calculateSkill('dpl')">
+            </label>
+            <label class="skill_name">
+                Diplomacy
+            </label>
+            <label class="skill_content">
+                <label id="skill_dpl_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =CHR
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_chr" id="skill_dpl_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_dpl_ranks" oninput="calculateSkill('dpl')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_dpl_misc" oninput="calculateSkill('dpl')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="dad_check" value="dad_check" id="skill_dad_check"
+                       onclick="calculateSkill('dad')">
+            </label>
+            <label class="skill_name">
+                Disable Device*
+            </label>
+            <label class="skill_content">
+                <label id="skill_dad_result" onchange="calculateSkill('dad')">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =DEX
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_dex" id="skill_dad_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_dad_ranks" oninput="calculateSkill('dad')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_dad_misc" oninput="calculateSkill('dad')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="dsg_check" value="dsg_check" id="skill_dsg_check"
+                       onclick="calculateSkill('dsg')">
+            </label>
+            <label class="skill_name">
+                Disguise
+            </label>
+            <label class="skill_content">
+                <label id="skill_dsg_result" onchange="calculateSkill('dsg')">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =CHR
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_chr" id="skill_dsg_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_dsg_ranks" oninput="calculateSkill('dsg')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_dsg_misc" oninput="calculateSkill('dsg')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="esc_check" value="esc_check" id="skill_esc_check"
+                       onclick="calculateSkill('esc')">
+            </label>
+            <label class="skill_name">
+                Escape Artist
+            </label>
+            <label class="skill_content">
+                <label id="skill_esc_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =DEX
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_dex" id="skill_esc_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_esc_ranks" oninput="calculateSkill('esc')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_esc_misc" oninput="calculateSkill('esc')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="fly_check" value="fly_check" id="skill_fly_check"
+                       onclick="calculateSkill('fly')">
+            </label>
+            <label class="skill_name">
+                Fly
+            </label>
+            <label class="skill_content">
+                <label id="skill_fly_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =DEX
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_dex" id="skill_fly_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_fly_ranks" oninput="calculateSkill('fly')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_fly_misc" oninput="calculateSkill('fly')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="han_check" value="han_check" id="skill_han_check"
+                       onclick="calculateSkill('han')">
+            </label>
+            <label class="skill_name">
+                Handle Animal*
+            </label>
+            <label class="skill_content">
+                <label id="skill_han_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =CHR
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_chr" id="skill_han_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_han_ranks" oninput="calculateSkill('han')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_han_misc" oninput="calculateSkill('han')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="hel_check" value="hel_check" id="skill_hel_check"
+                       onclick="calculateSkill('hel')">
+            </label>
+            <label class="skill_name">
+                Heal
+            </label>
+            <label class="skill_content">
+                <label id="skill_hel_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =WIS
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_wis" id="skill_hel_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_hel_ranks" oninput="calculateSkill('hel')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_hel_misc" oninput="calculateSkill('hel')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="ind_check" value="han_check" id="skill_ind_check"
+                       onclick="calculateSkill('ind')">
+            </label>
+            <label class="skill_name">
+                Intimidate
+            </label>
+            <label class="skill_content">
+                <label id="skill_ind_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =CHR
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_chr" id="skill_ind_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_ind_ranks" oninput="calculateSkill('ind')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_ind_misc" oninput="calculateSkill('ind')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="knl_arc_check" value="knl_arc_check" id="skill_knl_arc_check"
+                       onclick="calculateSkill('knl_arc')">
+            </label>
+            <label class="skill_name">
+                Knowledge Arcana*
+            </label>
+            <label class="skill_content">
+                <label id="skill_knl_arc_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =INT
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_int" id="skill_knl_arc_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_knl_arc_ranks" oninput="calculateSkill('knl_arc')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_knl_arc_misc" oninput="calculateSkill('knl_arc')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="knl_dun_check" value="knl_dun_check" id="skill_knl_dun_check"
+                       onclick="calculateSkill('knl_dun')">
+            </label>
+            <label class="skill_name">
+                Knowledge Dungeoneering*
+            </label>
+            <label class="skill_content">
+                <label id="skill_knl_dun_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =INT
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_int" id="skill_knl_dun_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_knl_dun_ranks" oninput="calculateSkill('knl_dun')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_knl_dun_misc" oninput="calculateSkill('knl_dun')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="knl_eng_check" value="knl_eng_check" id="skill_knl_eng_check"
+                       onclick="calculateSkill('knl_eng')">
+            </label>
+            <label class="skill_name">
+                Knowledge Engineering*
+            </label>
+            <label class="skill_content">
+                <label id="skill_knl_eng_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =INT
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_int" id="skill_knl_eng_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_knl_eng_ranks" oninput="calculateSkill('knl_eng')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_knl_eng_misc" oninput="calculateSkill('knl_eng')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="knl_geo_check" value="knl_geo_check" id="skill_knl_geo_check"
+                       onclick="calculateSkill('knl_geo')">
+            </label>
+            <label class="skill_name">
+                Knowledge Geology*
+            </label>
+            <label class="skill_content">
+                <label id="skill_knl_geo_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =INT
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_int" id="skill_knl_geo_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_knl_geo_ranks" oninput="calculateSkill('knl_geo')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_knl_geo_misc" oninput="calculateSkill('knl_geo')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="knl_his_check" value="knl_his_check" id="skill_knl_his_check"
+                       onclick="calculateSkill('knl_his')">
+            </label>
+            <label class="skill_name">
+                Knowledge History*
+            </label>
+            <label class="skill_content">
+                <label id="skill_knl_his_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =INT
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_int" id="skill_knl_his_attr">0</label>
+            </label>
+            <label>
+                        +
+                    </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_knl_his_ranks" oninput="calculateSkill('knl_his')">
+            </label>
+            <label>
+                        +
+                    </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_knl_his_misc" oninput="calculateSkill('knl_his')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="knl_loc_check" value="knl_loc_check" id="skill_knl_loc_check"
+                       onclick="calculateSkill('knl_loc')">
+            </label>
+            <label class="skill_name">
+                Knowledge Local*
+            </label>
+            <label class="skill_content">
+                <label id="skill_knl_loc_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =INT
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_int" id="skill_knl_loc_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_knl_loc_ranks" oninput="calculateSkill('knl_loc')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_knl_loc_misc" oninput="calculateSkill('knl_loc')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="knl_nat_check" value="knl_nat_check" id="skill_knl_nat_check"
+                       onclick="calculateSkill('knl_nat')">
+            </label>
+            <label class="skill_name">
+                Knowledge Nature*
+            </label>
+            <label class="skill_content">
+                <label id="skill_knl_nat_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =INT
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_int" id="skill_knl_nat_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_knl_nat_ranks" oninput="calculateSkill('knl_nat')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_knl_nat_misc" oninput="calculateSkill('knl_nat')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="knl_nob_check" value="knl_nob_check" id="skill_knl_nob_check"
+                       onclick="calculateSkill('knl_nob')">
+            </label>
+            <label class="skill_name">
+                Knowledge Nobility*
+            </label>
+            <label class="skill_content">
+                <label id="skill_knl_nob_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =INT
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_int" id="skill_knl_nob_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_knl_nob_ranks" oninput="calculateSkill('knl_nob')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_knl_nob_misc" oninput="calculateSkill('knl_nob')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="knl_pla_check" value="knl_pla_check" id="skill_knl_pla_check"
+                       onclick="calculateSkill('knl_pla')">
+            </label>
+            <label class="skill_name">
+                Knowledge Planes*
+            </label>
+            <label class="skill_content">
+                <label id="skill_knl_pla_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =INT
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_int" id="skill_knl_pla_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_knl_pla_ranks" oninput="calculateSkill('knl_pla')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_knl_pla_misc" oninput="calculateSkill('knl_pla')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="knl_rel_check" value="knl_rel_check" id="skill_knl_rel_check"
+                       onclick="calculateSkill('knl_rel')">
+            </label>
+            <label class="skill_name">
+                Knowledge Religion*
+            </label>
+            <label class="skill_content">
+                <label id="skill_knl_rel_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =INT
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_int" id="skill_knl_rel_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_knl_rel_ranks" oninput="calculateSkill('knl_rel')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_knl_rel_misc" oninput="calculateSkill('knl_rel')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="lin_check" value="lin_check" id="skill_lin_check"
+                       onclick="calculateSkill('lin')">
+            </label>
+            <label class="skill_name">
+                Linguistics*
+            </label>
+            <label class="skill_content">
+                <label id="skill_lin_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =INT
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_int" id="skill_lin_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_lin_ranks" oninput="calculateSkill('lin')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_lin_misc" oninput="calculateSkill('lin')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="prcep_check" value="prcep_check" id="skill_prcep_check"
+                       onclick="calculateSkill('prcep')">
+            </label>
+            <label class="skill_name">
+                Perception
+            </label>
+            <label class="skill_content">
+                <label id="skill_prcep_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =WIS
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_wis" id="skill_prcep_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_prcep_ranks" oninput="calculateSkill('prcep')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_prcep_misc" oninput="calculateSkill('prcep')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="perf1_check" value="perf1_check" id="skill_perf1_check"
+                       onclick="calculateSkill('perf1')">
+            </label>
+            <label class="skill_name">
+                Performance <input type="text" class="skill_input_alt" name="skill_perf1" id="skill_perf1">
+            </label>
+            <label class="skill_content">
+                <label id="skill_perf1_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =CHR
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_chr" id="skill_perf1_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_perf1_ranks" oninput="calculateSkill('perf1')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_perf1_misc" oninput="calculateSkill('perf1')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="perf2_check" value="perf2_check" id="skill_perf2_check"
+                       onclick="calculateSkill('perf2')">
+            </label>
+            <label class="skill_name">
+                Performance <input type="text" class="skill_input_alt" name="skill_perf2" id="skill_perf2">
+            </label>
+            <label class="skill_content">
+                <label id="skill_perf2_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =CHR
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_chr" id="skill_perf2_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_perf2_ranks" oninput="calculateSkill('perf2')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_perf2_misc" oninput="calculateSkill('perf2')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="prof1_check" value="prof1_check" id="skill_prof1_check"
+                       onclick="calculateSkill('prof1')">
+            </label>
+            <label class="skill_name">
+                Profession* <input type="text" class="skill_input_alt" name="skill_prof1" id="skill_prof1">
+            </label>
+            <label class="skill_content">
+                <label id="skill_prof1_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =WIS
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_wis" id="skill_prof1_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_prof1_ranks" oninput="calculateSkill('prof1')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_prof1_misc" oninput="calculateSkill('prof1')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="prof2_check" value="prof2_check" id="skill_prof2_check"
+                       onclick="calculateSkill('prof2')">
+            </label>
+            <label class="skill_name">
+                Profession* <input type="text" class="skill_input_alt" name="skill_prof2" id="skill_prof2">
+            </label>
+            <label class="skill_content">
+                <label id="skill_prof2_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =WIS
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_wis" id="skill_prof2_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_prof2_ranks" oninput="calculateSkill('prof2')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_prof2_misc" oninput="calculateSkill('prof2')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="ride_check" value="ride_check" id="skill_ride_check"
+                       onclick="calculateSkill('ride')">
+            </label>
+            <label class="skill_name">
+                Ride
+            </label>
+            <label class="skill_content">
+                <label id="skill_ride_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =DEX
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_dex" id="skill_ride_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_ride_ranks" oninput="calculateSkill('ride')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_ride_misc" oninput="calculateSkill('ride')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="smot_check" value="smot_check" id="skill_smot_check"
+                       onclick="calculateSkill('smot')">
+            </label>
+            <label class="skill_name">
+                Sense Motive
+            </label>
+            <label class="skill_content">
+                <label id="skill_smot_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =WIS
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_wis" id="skill_smot_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_smot_ranks" oninput="calculateSkill('smot')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_smot_misc" oninput="calculateSkill('smot')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="soh_check" value="soh_check" id="skill_soh_check"
+                       onclick="calculateSkill('soh')">
+            </label>
+            <label class="skill_name">
+                Sleight of Hand*
+            </label>
+            <label class="skill_content">
+                <label id="skill_soh_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =DEX
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_dex" id="skill_soh_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_soh_ranks" oninput="calculateSkill('soh')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_soh_misc" oninput="calculateSkill('soh')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="spell_check" value="spell_check" id="skill_spell_check"
+                       onclick="calculateSkill('spell')">
+            </label>
+            <label class="skill_name">
+                Spellcraft*
+            </label>
+            <label class="skill_content">
+                <label id="skill_spell_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =INT
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_int" id="skill_spell_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_spell_ranks" oninput="calculateSkill('spell')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_spell_misc" oninput="calculateSkill('spell')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="stl_check" value="stl_check" id="skill_stl_check"
+                       onclick="calculateSkill('stl')">
+            </label>
+            <label class="skill_name">
+                Stealth
+            </label>
+            <label class="skill_content">
+                <label id="skill_stl_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =DEX
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_dex" id="skill_stl_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_stl_ranks" oninput="calculateSkill('stl')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_stl_misc" oninput="calculateSkill('stl')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="sur_check" value="sur_check" id="skill_sur_check"
+                       onclick="calculateSkill('sur')">
+            </label>
+            <label class="skill_name">
+                Survival
+            </label>
+            <label class="skill_content">
+                <label id="skill_sur_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =WIS
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_wis" id="skill_sur_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_sur_ranks" oninput="calculateSkill('sur')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_sur_misc" oninput="calculateSkill('sur')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="swim_check" value="swim_check" id="skill_swim_check"
+                       onclick="calculateSkill('swim')">
+            </label>
+            <label class="skill_name">
+                Swim
+            </label>
+            <label class="skill_content">
+                <label id="skill_swim_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =STR
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_str" id="skill_swim_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_swim_ranks" oninput="calculateSkill('swim')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_swim_misc" oninput="calculateSkill('swim')">
+            </label>
+        </div>
+
+        <div class="skill_line">
+            <label class="skill_check_box">
+                <input type="checkbox" name="umd_check" value="umd_check" id="skill_umd_check"
+                       onclick="calculateSkill('umd')">
+            </label>
+            <label class="skill_name">
+                Use Magic Device*
+            </label>
+            <label class="skill_content">
+                <label id="skill_umd_result">0</label>
+            </label>
+            <label class="skill_attr_name">
+                =CHR
+            </label>
+            <label class="skill_content">
+                <label class="attr_skill result_chr" id="skill_umd_attr">0</label>
+            </label>
+            <label>
+                +
+            </label>
+
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_umd_ranks" oninput="calculateSkill('umd')">
+            </label>
+            <label>
+                +
+            </label>
+            <label class="skill_content">
+                <input type="number" class="skill_input" id="skill_swim_misc" oninput="calculateSkill('umd')">
+            </label>
+        </div>
+
+
+
+
     </div>
 
     <button type="submit">Create</button>

@@ -16,6 +16,7 @@ select{
 input{
     width: 95%;
     background-color: antiquewhite;
+    text-align: center;
 }
 
 .general_info {
@@ -25,23 +26,24 @@ input{
     display: inline-block;
 }
 
-.attr_skills {
-    width: 49%;
+.triple_element {
+    width: 33%;
     horiz-align: center;
     vertical-align: top;
     text-align: left;
     display: inline-block;
+    line-height: 25px;
 }
 
-.attr_content, .attr_name, .attr_corner, .attr_result{
-    width: 11%;
+.attr_content, .attr_name, .attr_corner, .result_attr{
+    width: 12.8%;
     display: inline-block;
-    margin-left: 2em;
-    margin-right: 2em;
+    margin-left: 3%;
+    margin-right: 3%;
     border: 2px solid black;
 }
 
-label.attr_content, label.attr_name, label.attr_result{
+label.attr_content, label.attr_name, label.result_attr, label.skill_result{
     text-align: center;
 }
 
@@ -50,7 +52,89 @@ label.attr_content, label.attr_name, label.attr_result{
     background-color: black;
 }
 
-input.attr_input, .attr_corner, label.attr_result {
+.attr_corner{
+    opacity: 0;
+}
+
+input.attr_input, label.result_attr {
     border: None;
 }
+
+.skill_name, .skill_check_box {
+    display: inline-block;
+    align-content: normal;
+    width: 20%;
+}
+
+.skill_check_box {
+    width: 5%;
+}
+
+.skill_line {
+    width: 100%;
+    horiz-align: center;
+    border: 2px solid black;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+.skill_result{
+    width: 12.8%;
+    display: inline-block;
+    margin-left: 3%;
+    margin-right: 3%;
+    border: 2px solid black;
+}
+
+label.skill_attr_name{
+    width: 10%;
+    height: 100%;
+    display: inline-block;
+    margin-left: 1%;
+    margin-right: 1%;
+    border: None;
+    text-align: center;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+
+
+.skill_mod {
+    text-align: center;
+    width: 12.8%;
+    display: inline-block;
+    margin-left: 3%;
+    margin-right: 3%;
+    border: 2px solid black;
+}
+
+.skill_content {
+    width: 10%;
+    height: 100%;
+    display: inline-block;
+    margin-left: 1%;
+    margin-right: 1%;
+    border: 2px solid black;
+    text-align: center;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+input.skill_input {
+    border: None;
+}
+
+input.skill_input_alt {
+    width: 60%;
+    border: None;
+}
+
+.skill_line_head {
+    color: white;
+    background-color: black;
+    border: solid black;
+    text-align: center;
+}
+
 

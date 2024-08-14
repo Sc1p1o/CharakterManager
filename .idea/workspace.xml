@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04b4fb6f-45e4-4606-b127-3ee0cf5d7992" name="Changes" comment="initial commit" />
+    <list default="true" id="04b4fb6f-45e4-4606-b127-3ee0cf5d7992" name="Changes" comment="initial commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/characters/static/characters/character_sheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/characters/static/characters/character_sheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/characters/static/characters/js/character_creator.js" beforeDir="false" afterPath="$PROJECT_DIR$/characters/static/characters/js/character_creator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/characters/templates/characters/create_pathfinder.html" beforeDir="false" afterPath="$PROJECT_DIR$/characters/templates/characters/create_pathfinder.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +30,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Sc1p1o"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Sc1p1o/CharakterManager.git",
+    "accountId": "57dd039c-0bec-4ebb-9ccc-699f790b5dbb"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -96,7 +113,7 @@
       <workItem from="1723324374472" duration="14641000" />
       <workItem from="1723400857028" duration="28059000" />
       <workItem from="1723498800839" duration="20917000" />
-      <workItem from="1723581234571" duration="466000" />
+      <workItem from="1723581234571" duration="20954000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -114,7 +131,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723581321415</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1723581774304</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1723581774304</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
